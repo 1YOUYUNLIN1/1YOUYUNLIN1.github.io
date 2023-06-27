@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DIVE</title>
+
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <h1 class="title">DIVE</h1>
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+      </div>
+    </div>
+    <p class="game-intro">Dive是一种类似Threes的游戏，融合了加法和乘法。
+图块和它的<strong>除数</strong>合并。</p>
+    <form method="post" name="gameModeForm" id="gameModeForm">
+      <p class="game-intro">种子：
+        <select id="gameModeSelect" name="gameModeSelect" onchange="changeGameMode()">
+          <option value="0">
+            2, 3, 5 & 7
+          </option>
+          <option value="1">
+            所有创建过的质数
+          </option>
+          <option value="3" selected="selected">
+            当前面板上的所有质数因子
+          </option>
+        </select>
+      </p>
+    </form>
+    <div class="currently-unlocked"></div>
+
+    <div class="game-container">
+      <div class="announcer"></div>
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+          <a class="retry-button">重新开始</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+
+    <p class="game-explanation">
+      <strong class="important">玩法：</strong> 使用 <strong>箭头键</strong>或者<strong>滑动</strong>来移动图块(WASD和HJKL也可以)。当两个瓷砖接触时，如果其中一个是另一个的除数，它们<strong>合并为一个，并且数值相加！</strong>
+    </p>
+<p>
+当你创建新的图块 N 时，游戏会将 N 除以所有当前种子，如果不是1，则结果将作为新种子“解锁”。这些新种子实际上并不总是最好的！（你能得到一个复合的吗？）
+</p>
+    <hr>
+
+    </div>
+    <hr>
+  </div>
+<!--  <center>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+      style="display:inline-block;width:728px;height:90px"
+      data-ad-client="ca-pub-8993602011917340"
+      data-ad-slot="3210731646"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </center>-->
+
+  <script src="js/animframe_polyfill.js"></script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/html_actuator.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/local_score_manager.js"></script>
+  <script src="js/game_manager.js"></script>
+  <script src="js/application.js"></script>
+</body>
+</html>
