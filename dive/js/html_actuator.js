@@ -191,7 +191,7 @@ HTMLActuator.prototype.announce = function (message) {
 
 HTMLActuator.prototype.message = function (game_over_data) {
   var type    = false ? "game-won" : "game-over";
-  var message = false ? "You win!" : "Game over!";
+  var message = false ? "胜利！" : "游戏结束！";
 
   this.clearContainer(this.announcer);
   this.messageContainer.classList.add(type);
